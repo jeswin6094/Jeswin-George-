@@ -490,36 +490,31 @@ input, textarea, button { font-family: var(--font); }
 .contact-card a:hover { color: var(--accent); }
 
 /* Form */
-.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-.form-group { position: relative; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--text2); letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 .form-group input, .form-group textarea {
-  width: 100%; padding: 1rem 1.2rem;
+  width: 100%; padding: 0.9rem 1.2rem;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.3s, background 0.3s;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
   resize: none;
+}
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: var(--text3);
 }
 .form-group input:focus, .form-group textarea:focus {
   border-color: var(--accent);
   background: var(--surface2);
-}
-.form-group label {
-  position: absolute; top: 50%; left: 1.2rem;
-  transform: translateY(-50%);
-  color: var(--text3); font-size: 0.9rem;
-  pointer-events: none;
-  transition: all 0.3s;
-}
-.form-group textarea ~ label { top: 1rem; transform: none; }
-.form-group input:focus ~ label,
-.form-group input:not(:placeholder-shown) ~ label {
-  top: -0.5rem; left: 0.8rem; font-size: 0.72rem;
-  color: var(--accent); background: var(--surface2);
-  padding: 0 4px; border-radius: 2px;
+  box-shadow: 0 0 0 3px rgba(168,85,247,0.12);
 }
 .form-success {
   padding: 0.9rem 1.2rem;
